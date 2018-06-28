@@ -1,3 +1,7 @@
+package io.github.mrrefactoring;
+
+import io.github.mrrefactoring.Fraction;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -1,20 +1,23 @@
+import io.github.mrrefactoring.DivisionByZeroException;
+import io.github.mrrefactoring.Fraction;
+import io.github.mrrefactoring.OverflowException;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class FunctionalTests extends Assert {
 
 
-    @Test(expected = IllegalArgumentException.class)  // todo {Fraction.InvalidParameter}
+    @Test(expected = IllegalArgumentException.class)  // todo {io.github.mrrefactoring.Fraction.InvalidParameter}
     public void test_0(){
         new Fraction("");
     }
 
-    @Test(expected = IllegalArgumentException.class)  // todo {Fraction.InvalidParameter}
+    @Test(expected = IllegalArgumentException.class)  // todo {io.github.mrrefactoring.Fraction.InvalidParameter}
     public void test_1(){
         new Fraction("foo");
     }
 
-    @Test  // todo {Fraction.InvalidParameter}
+    @Test  // todo {io.github.mrrefactoring.Fraction.InvalidParameter}
     public void test_2(){
         assertEquals(new Fraction(" 123"), new Fraction(123));
     }
@@ -129,12 +132,12 @@ public class FunctionalTests extends Assert {
         assertEquals(new Fraction("-123.(4)").toString(), new Fraction("-123.(4)").toString());
     }
 
-    @Test(expected = DivisionByZeroException.class)  // todo {Fraction.DivisionByZero}
+    @Test(expected = DivisionByZeroException.class)  // todo {io.github.mrrefactoring.Fraction.DivisionByZero}
     public void test_25(){
         new Fraction("0/0");
     }
 
-    @Test(expected = DivisionByZeroException.class)  // todo {Fraction.DivisionByZero}
+    @Test(expected = DivisionByZeroException.class)  // todo {io.github.mrrefactoring.Fraction.DivisionByZero}
     public void test_26(){
         new Fraction("9/0");
     }
@@ -169,7 +172,7 @@ public class FunctionalTests extends Assert {
         assertEquals(new Fraction("-19 123/456").toString(), new Fraction("-19.269(736842105263157894)").toString());
     }
 
-    @Test(expected = IllegalArgumentException.class)  // todo {Fraction.InvalidParameter}
+    @Test(expected = IllegalArgumentException.class)  // todo {io.github.mrrefactoring.Fraction.InvalidParameter}
     public void test_33(){
         new Fraction("123.(22)123");
     }
@@ -184,17 +187,17 @@ public class FunctionalTests extends Assert {
         assertEquals(new Fraction("3.'09009'").toString(), new Fraction("3.(09009)").toString());
     }
 
-    @Test(expected = IllegalArgumentException.class)  // todo {Fraction.InvalidParameter}
+    @Test(expected = IllegalArgumentException.class)  // todo {io.github.mrrefactoring.Fraction.InvalidParameter}
     public void test_36(){
         new Fraction("123.(((");
     }
 
-    @Test(expected = IllegalArgumentException.class)  // todo {Fraction.InvalidParameter}
+    @Test(expected = IllegalArgumentException.class)  // todo {io.github.mrrefactoring.Fraction.InvalidParameter}
     public void test_37(){
         new Fraction("123.((");
     }
 
-    @Test(expected = IllegalArgumentException.class)  // todo {Fraction.InvalidParameter}
+    @Test(expected = IllegalArgumentException.class)  // todo {io.github.mrrefactoring.Fraction.InvalidParameter}
     public void test_38(){
         new Fraction("123.()");
     }
@@ -424,7 +427,7 @@ public class FunctionalTests extends Assert {
         assertEquals(new Fraction("1").div("195312500").toString(), new Fraction("0.00000000512").toString());
     }
 
-    @Test(expected = DivisionByZeroException.class)  // todo {Fraction.DivisionByZero}
+    @Test(expected = DivisionByZeroException.class)  // todo {io.github.mrrefactoring.Fraction.DivisionByZero}
     public void test_89(){
         new Fraction(10).div(0);
     }
@@ -463,7 +466,7 @@ public class FunctionalTests extends Assert {
         assertEquals(new Fraction(12.5).add(0).toString(), new Fraction("12.5").toString());
     }
 
-    @Test(expected = DivisionByZeroException.class)  // todo {Fraction.DivisionByZero}
+    @Test(expected = DivisionByZeroException.class)  // todo {io.github.mrrefactoring.Fraction.DivisionByZero}
     public void test_96(){
         new Fraction(0).inverse();
     }

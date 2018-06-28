@@ -1,4 +1,4 @@
-/**
+package io.github.mrrefactoring; /**
  * @license FractionOld.java v0.0.1 22/06/2018
  * https://github.com/MrRefactoring/Fraction.java
  *
@@ -31,7 +31,7 @@
  *
  * Example:
  *
- * Fraction f = new Fraction("9.4'31'");
+ * io.github.mrrefactoring.Fraction f = new io.github.mrrefactoring.Fraction("9.4'31'");
  * f.mul(new int[] {-4, 3}).div(4.9);
  *
  */
@@ -127,7 +127,7 @@ public class Fraction implements Comparable{
     /**
      * Adds two rational numbers
      *
-     * Ex: new Fraction(2, 3).add("14.9") => 467 / 30
+     * Ex: new io.github.mrrefactoring.Fraction(2, 3).add("14.9") => 467 / 30
      **/
     public Fraction add(Fraction fraction){
         return new Fraction(
@@ -183,7 +183,7 @@ public class Fraction implements Comparable{
     /**
      * Subtracts two rational numbers
      *
-     * Ex: new Fraction(2, 3).add("14.9") => -427 / 30
+     * Ex: new io.github.mrrefactoring.Fraction(2, 3).add("14.9") => -427 / 30
      **/
     public Fraction sub(Fraction fraction){
         return new Fraction(
@@ -239,7 +239,7 @@ public class Fraction implements Comparable{
     /**
      * Multiplies two rational numbers
      *
-     * Ex: new Fraction("-17.(345)").mul(3) => 5776 / 111
+     * Ex: new io.github.mrrefactoring.Fraction("-17.(345)").mul(3) => 5776 / 111
      **/
     public Fraction mul(Fraction fraction){
         long[] firstFraction = this.toArray();
@@ -296,7 +296,7 @@ public class Fraction implements Comparable{
     /**
      * Divides two rational numbers
      *
-     * Ex: new Fraction("-17.(345)").inverse().div(3)
+     * Ex: new io.github.mrrefactoring.Fraction("-17.(345)").inverse().div(3)
      **/
     public Fraction div(Fraction fraction){
         long[] firstFraction = this.toArray();
@@ -356,7 +356,7 @@ public class Fraction implements Comparable{
     /**
      * Calculates the absolute value
      *
-     * Ex: new Fraction(-4).abs() => 4
+     * Ex: new io.github.mrrefactoring.Fraction(-4).abs() => 4
      **/
     public Fraction abs(){
         if (this.s < 0)
@@ -367,7 +367,7 @@ public class Fraction implements Comparable{
     /**
      * Inverts the sign of the current fraction
      *
-     * Ex: new Fraction(-4).neg() => 4
+     * Ex: new io.github.mrrefactoring.Fraction(-4).neg() => 4
      **/
     public Fraction neg(){
         long[] fraction = this.toArray();
@@ -378,7 +378,7 @@ public class Fraction implements Comparable{
     /**
      * Gets the inverse of the fraction, means numerator and denumerator are exchanged
      *
-     * Ex: new Fraction(new int[]{-3, 4}).inverse() => -4 / 3
+     * Ex: new io.github.mrrefactoring.Fraction(new int[]{-3, 4}).inverse() => -4 / 3
      **/
     public Fraction inverse(){
         return new Fraction(new long[]{this.d, this.n, this.s});
@@ -393,7 +393,7 @@ public class Fraction implements Comparable{
     /**
      * Calculates the modulo of two rational numbers - a more precise fmod
      *
-     * Ex: new Fraction('4.(3)').mod(new int[]{7, 8}) => (13/3) % (7/8) = (5/6)
+     * Ex: new io.github.mrrefactoring.Fraction('4.(3)').mod(new int[]{7, 8}) => (13/3) % (7/8) = (5/6)
      **/
     public Fraction mod(Fraction fraction){
         if (fraction.n == 0 && this.d == 0)
@@ -467,7 +467,7 @@ public class Fraction implements Comparable{
     /**
      * Calculates the fraction to some integer exponent
      *
-     * Ex: new Fraction(-1, 2).pow(-3) => -8
+     * Ex: new io.github.mrrefactoring.Fraction(-1, 2).pow(-3) => -8
      */
     public Fraction pow(double exp){
         if (exp < 0)
@@ -481,7 +481,7 @@ public class Fraction implements Comparable{
     /**
      * Calculates the fractional gcd of two rational numbers
      *
-     * Ex: new Fraction(5,8).gcd(3,7) => 1/56
+     * Ex: new io.github.mrrefactoring.Fraction(5,8).gcd(3,7) => 1/56
      */
     public Fraction gcd(Fraction fraction){
         // gcd(a / b, c / d) = gcd(a, c) / lcm(b, d)
@@ -557,7 +557,7 @@ public class Fraction implements Comparable{
     /**
      * Calculates the fractional lcm of two rational numbers
      *
-     * Ex: new Fraction(5,8).lcm(3,7) => 15
+     * Ex: new io.github.mrrefactoring.Fraction(5,8).lcm(3,7) => 15
      */
     public Fraction lcm(Fraction fraction){
         // lcm(a / b, c / d) = lcm(a, c) / gcd(b, d)
@@ -617,7 +617,7 @@ public class Fraction implements Comparable{
     /**
      * Calculates the ceil of a rational number
      *
-     * Ex: new Fraction("4.(3)").ceil() => (5 / 1)
+     * Ex: new io.github.mrrefactoring.Fraction("4.(3)").ceil() => (5 / 1)
      **/
     public Fraction ceil(){
         return this.ceil(0);
@@ -631,7 +631,7 @@ public class Fraction implements Comparable{
     /**
      * Calculates the floor of a rational number
      *
-     * Ex: new Fraction("4.(3)").floor() => (4 / 1)
+     * Ex: new io.github.mrrefactoring.Fraction("4.(3)").floor() => (4 / 1)
      **/
     public Fraction floor(){
         return this.floor(0);
@@ -645,7 +645,7 @@ public class Fraction implements Comparable{
     /**
      * Rounds a rational numbers
      *
-     * Ex: new Fraction("4.(3)").round() => (4 / 1)
+     * Ex: new io.github.mrrefactoring.Fraction("4.(3)").round() => (4 / 1)
      **/
     public Fraction round(){
         return this.round(0);
@@ -720,7 +720,7 @@ public class Fraction implements Comparable{
         return (double) this.s * (double) this.n / (double) this.d;
     }
 
-    public double toNumber(){
+    public double toDecimal(){
         return this.valueOf();
     }
 
@@ -741,9 +741,9 @@ public class Fraction implements Comparable{
     }
 
     /**
-     * Returns a latex representation of a Fraction object
+     * Returns a latex representation of a io.github.mrrefactoring.Fraction object
      *
-     * Ex: new Fraction("1.'3'").toLatex() => "\frac{4}{3}"
+     * Ex: new io.github.mrrefactoring.Fraction("1.'3'").toLatex() => "\frac{4}{3}"
      **/
     public String toLatex(){
         return this.toLatex(false);
@@ -815,7 +815,7 @@ public class Fraction implements Comparable{
     /**
      * Check if two rational numbers are the same
      *
-     * Ex: new Fraction(19.6).equals(new int[]{98, 5});
+     * Ex: new io.github.mrrefactoring.Fraction(19.6).equals(new int[]{98, 5});
      **/
     @Override
     public boolean equals(Object o) {
@@ -836,7 +836,7 @@ public class Fraction implements Comparable{
     /**
      * Check if two rational numbers are the same
      *
-     * Ex: new Fraction(19.6).compareTo(new int[]{98, 5});
+     * Ex: new io.github.mrrefactoring.Fraction(19.6).compareTo(new int[]{98, 5});
      **/
     @Override
     public int compareTo(Object o) {
@@ -859,7 +859,7 @@ public class Fraction implements Comparable{
     /**
      * Creates a string representation of a fraction with all digits
      *
-     * Ex: new Fraction("100.'91823'").toString() => "100.(91823)"
+     * Ex: new io.github.mrrefactoring.Fraction("100.'91823'").toString() => "100.(91823)"
      **/
     @Override
     public String toString() {
@@ -923,7 +923,7 @@ public class Fraction implements Comparable{
 
     private void set(Number[] fraction){
         if (fraction[0].longValue() >= Long.MAX_VALUE || fraction[1].longValue() >= Long.MAX_VALUE)
-            throw new OverflowException("Fraction values overflow");
+            throw new OverflowException("io.github.mrrefactoring.Fraction values overflow");
         double gcd = !Fraction.REDUCE ? this.gcdAlgorithm(fraction[0].longValue(), fraction[1].longValue()): 1;
         this.n = (long) (fraction[0].longValue() / gcd);
         this.d = (long) (fraction[1].longValue() / gcd);

@@ -1,3 +1,4 @@
+import io.github.mrrefactoring.Fraction;
 import org.junit.Assert;
 import org.junit.Test;
 

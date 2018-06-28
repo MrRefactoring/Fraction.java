@@ -1,3 +1,5 @@
+package io.github.mrrefactoring;
+
 public class DivisionByZeroException extends ArithmeticException{
 
     public DivisionByZeroException(){
