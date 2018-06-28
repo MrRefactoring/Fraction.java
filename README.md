@@ -11,9 +11,11 @@ Tired of imprecise numbers represented by doubles, which have to store rational 
 1 / 98 * 98 // = 0.9999999999999999
 ```
 
-If you need more precision or just want a fraction as a result, have a look at *Fraction.js*:
+If you need more precision or just want a fraction as a result, have a look at *Fraction.java*:
 
 ```java
+import io.github.mrrefactoring.Fraction;
+
 new Fraction(1).div(98).mul(98) // = 1
 ```
 
